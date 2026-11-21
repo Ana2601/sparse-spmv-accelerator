@@ -4,6 +4,8 @@
 
 A CSR sparse matrix × dense vector engine with P parallel MAC lanes, plus a sparsity-aware cost model whose predictions are validated **cycle-exactly** against the RTL. This is the hardware follow-up to the MatAnalyze sparse-format research (CHIPS Lab).
 
+![Architecture](docs/diagrams/architecture.svg)
+
 ## Design (`rtl/spmv_csr.sv`)
 
 - y = A·x with INT16 values and vector, **exact** 48-bit accumulation
@@ -45,6 +47,12 @@ make test         # P=4
 make test P=8
 make lint
 ```
+
+## Test run
+
+Output of the CI command (`make test lint`), captured from a local run:
+
+![Test run](docs/screenshots/test_run.svg)
 
 ## Limitations / next steps
 
